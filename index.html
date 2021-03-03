@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Ferrovia</title>
   </head>
 
   <style media="screen">
@@ -12,32 +12,41 @@
       color: red;
     }
 
+    .under-title {
+      text-align: center;
+      color: black;
+    }
+
+
   </style>
 
   <body>
 
     <h1 class="title">Ferrovia</h1>
+    <p id="text" class="under-title">Vuoi conoscere il prezzo della tua tratta? Rispondi alle seguenti domande:</p>
 
     <script type="text/javascript">
 
     var numberKm = parseInt(prompt('Quanti km devi percorrere? '));
     var agePassenger = parseInt(prompt('Quanti anni hai? '));
+    // console.log(numberkm, agepassenger);
     var priceKm =  parseFloat(0.21 * numberKm);
+    var priceKmSenior = parseFloat(0.21 * numberKm / 100 * 60);
+    var priceKmBaby = parseFloat(0.21 * numberKm / 100 * 80);
     var baby = 18;
     var senior = 65;
-    // console.log(numberkm, agepassenger, pricekm);
-
-    var priceKmBaby = parseFloat(0.21 * numberKm / 100 * 80);
-    var priceKmSenior = parseFloat(0.21 * numberKm / 100 * 60);
 
     if (agePassenger < baby) {
       console.log(priceKmBaby);
+      document.getElementById('text').innerHTML = 'Il costo del tuo biglietto: ' + priceKmBaby + '€ '  +'.'  + '  Rientri nella categoria Baby!!';
     }
-    else if (agePassenger >= baby , agePassenger <= senior) {
+    else if (agePassenger > senior) {
+      console.log(priceKmSenior);
+      document.getElementById('text').innerHTML = 'Il costo del tuo biglietto: ' + priceKmSenior + '€ '  +'.'  + '  Rientri nella categoria Senior!!';
+    }
+    else  {
       console.log(priceKm);
-    }
-    else (agePassenger > senior) {
-        console.log(priceKmSenior);
+        document.getElementById('text').innerHTML = 'Il costo del tuo biglietto: ' + priceKm + '€ '  +'.';
     }
 
 
