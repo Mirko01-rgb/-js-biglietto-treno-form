@@ -4,10 +4,46 @@
     <meta charset="utf-8">
     <title></title>
   </head>
+
+  <style media="screen">
+
+    .title {
+      text-align: center;
+      color: red;
+    }
+
+  </style>
+
   <body>
+
+    <h1 class="title">Ferrovia</h1>
+
     <script type="text/javascript">
 
+    var numberKm = parseInt(prompt('Quanti km devi percorrere? '));
+    var agePassenger = parseInt(prompt('Quanti anni hai? '));
+    var priceKm =  parseFloat(0.21 * numberKm);
+    var baby = 18;
+    var senior = 65;
+    // console.log(numberkm, agepassenger, pricekm);
+
+    var priceKmBaby = parseFloat(0.21 * numberKm / 100 * 80);
+    var priceKmSenior = parseFloat(0.21 * numberKm / 100 * 60);
+
+    if (agePassenger < baby) {
+      console.log(priceKmBaby);
+    }
+    else if (agePassenger >= baby , agePassenger <= senior) {
+      console.log(priceKm);
+    }
+    else (agePassenger > senior) {
+        console.log(priceKmSenior);
+    }
+
+
+
     </script>
+
 
   </body>
 </html>
